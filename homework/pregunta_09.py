@@ -24,9 +24,11 @@ def pregunta_09():
 
     """
     df = pd.read_csv('files/input/tbl0.tsv', sep='\t')
-    df['year'] = pd.to_datetime(df['c3']).dt.year
+    df['year']=df['c3'].str.split('-').str[0]
 
     return df
+
+
 
 
 if __name__ == "__main__":
